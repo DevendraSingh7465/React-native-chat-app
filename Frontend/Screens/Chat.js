@@ -1,6 +1,15 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Button, Image, ScrollView, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient';
+
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
+// import { Drawer } from 'expo-router/drawer';
+import { useNavigation } from '@react-navigation/native';
+
 export default function Chat() {
+    const navigation = useNavigation(); // Get the navigation object
+
+    const openDrawer = () => {
+        navigation.openDrawer();
+    };
     return (
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView
@@ -9,7 +18,13 @@ export default function Chat() {
                 keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : -100}
             >
                 <View style={{ flex: 1, alignItems: 'center', flexDirection: 'column', justifyContent: 'space-between' }}>
-                    <View style={{ alignItems: 'center', paddingTop: 20 }}>
+                    <View style={styles.header_container}>
+                        <Button
+                            onPress={openDrawer}
+                            title="Learn More"
+                            color="#841584"
+                            accessibilityLabel="Learn more about this purple button"
+                        />
                         <Text style={styles.heading}>ChatGPT</Text>
                     </View>
                     <View style={styles.chat_container}>
@@ -44,6 +59,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
+    header_container: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: 20
+    },
     heading: {
         fontSize: 30,
         fontWeight: '900',
@@ -67,7 +88,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10, 
+        padding: 10,
     },
     input_field: {
         borderWidth: 2,
@@ -76,11 +97,11 @@ const styles = StyleSheet.create({
         width: '80%',
         borderRadius: 10,
         fontWeight: '500',
-        padding: 10, 
+        padding: 10,
         color: '#fff',
     },
     send_button: {
-        padding: 10, 
+        padding: 10,
     },
 });
 
