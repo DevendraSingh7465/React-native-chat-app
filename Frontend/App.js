@@ -7,8 +7,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen component={Main} name='Main' />
-        <Stack.Screen component={Chat} name='Chat' />
+        <Stack.Screen component={Main} name='Main' options={{headerShown:false}} /> 
+        <Stack.Screen component={Chat} name='Chat' options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
