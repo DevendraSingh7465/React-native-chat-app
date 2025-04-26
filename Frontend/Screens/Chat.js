@@ -19,13 +19,14 @@ export default function Chat() {
             >
                 <View style={{ flex: 1, alignItems: 'center', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <View style={styles.header_container}>
-                        <Button
+                        <TouchableOpacity
                             onPress={openDrawer}
-                            title="Learn More"
-                            color="#841584"
-                            accessibilityLabel="Learn more about this purple button"
-                        />
+                            style={styles.send_button}
+                        >
+                            <Image source={require('../assets/options.png')} style={{ height: 30, width: 30 }} />
+                        </TouchableOpacity>
                         <Text style={styles.heading}>ChatGPT</Text>
+                        <Image source={require('../assets/user.png')} style={{ height: 35, width: 35 }} />
                     </View>
                     <View style={styles.chat_container}>
                         <Text style={styles.chat_heading}>Hello, Devendra Singh Bhati</Text>
@@ -61,9 +62,11 @@ const styles = StyleSheet.create({
     },
     header_container: {
         flex: 1,
+        width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 20
+        justifyContent: 'space-between',
+        padding: 20,
     },
     heading: {
         fontSize: 30,
