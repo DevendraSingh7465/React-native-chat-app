@@ -1,11 +1,8 @@
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Button, Image, ScrollView, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
-
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import { Drawer } from 'expo-router/drawer';
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Chat() {
-    const navigation = useNavigation(); // Get the navigation object
+    const navigation = useNavigation();
 
     const openDrawer = () => {
         navigation.openDrawer();
@@ -29,7 +26,7 @@ export default function Chat() {
                         <Image source={require('../assets/user.png')} style={{ height: 35, width: 35 }} />
                     </View>
                     <View style={styles.chat_container}>
-                        <Text style={styles.chat_heading}>Hello, Devendra Singh Bhati</Text>
+                        <Text style={styles.chat_heading}>Hi, User!</Text>
                     </View>
 
                     <View style={styles.input_field_container}>
